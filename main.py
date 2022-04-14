@@ -25,10 +25,10 @@ class WidgetsExample(GridLayout):
 
     def on_toggle_enable_state(self, widget):
         if widget.state == "down":
-            widget.text = "Counter lock: ON"
+            widget.text = "Lock: ON"
             self.count_enabled = False
         else:
-            widget.text = "Counter lock: OFF"
+            widget.text = "Lock: OFF"
             self.count_enabled = True
 
     def on_plus_button_click(self):
