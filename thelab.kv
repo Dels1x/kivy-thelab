@@ -2,11 +2,22 @@ WidgetsExample:
 
 <WidgetsExample@GridLayout>:
     cols: 3
-    ToggleButton:
-        text: "OFF"
-        on_state: root.on_toggle_button_state(self)
+
+    BoxLayout:
+        orientation: "vertical"
         size_hint: None, 1
         width: "120dp"
+        ToggleButton:
+            text: "*5: OFF"
+            on_state: root.on_toggle_5_state(self)
+            size_hint: None, 1
+            width: "120dp"
+        ToggleButton:
+            text: "Lock counter: OFF"
+            on_state: root.on_toggle_enable_state(self)
+            size_hint: None, 1
+            width: "120dp"
+
     BoxLayout:
         orientation: "vertical"
         Button:
@@ -15,6 +26,7 @@ WidgetsExample:
         Button:
             text: "-"
             on_press: root.on_minus_button_click()
+
     Label:
         text: root.text
         font_name: "fonts/Lcd.ttf"
