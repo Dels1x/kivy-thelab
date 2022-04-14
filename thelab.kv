@@ -2,13 +2,24 @@ WidgetsExample:
 
 <WidgetsExample@GridLayout>:
     cols: 3
-    Button:
-        text: "Click!"
-        on_press: root.on_button_click()
+    ToggleButton:
+        text: "OFF"
+        on_state: root.on_toggle_button_state(self)
+        size_hint: None, 1
+        width: "120dp"
+    BoxLayout:
+        orientation: "vertical"
+        Button:
+            text: "+"
+            on_press: root.on_plus_button_click()
+        Button:
+            text: "-"
+            on_press: root.on_minus_button_click()
     Label:
         text: root.text
         font_name: "fonts/Lcd.ttf"
         font_size: "128dp"
+        color: "#7294FF"
 
 <PageLayoutExample@PageLayout>:
     MainWidget:
