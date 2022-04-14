@@ -1,0 +1,77 @@
+ScrollViewExample:
+
+<ScrollViewExample@ScrollView>:
+    StackLayoutExample:
+        size_hint: 1, None
+        height: self.minimum_height
+
+<StackLayoutExample>:
+    # orientation: "rl-tb"
+    spacing: "5dp", "5dp"
+
+<GridLayoutExample@GridLayout>:
+    cols: 4
+    Button:
+        text: "A"
+    BoxLayoutExample:
+    Button:
+        text: "C"
+    Button:
+        text: "D"
+    Button:
+        text: "E"
+    Button:
+        text: "F"
+    Button:
+        text: "G"
+    Button:
+        text: "H"
+    Button:
+        text: "I"
+    Button:
+        text: "J"
+
+
+<AnchorLayoutExample>:
+    anchor_x: "center"
+    anchor_y: "top"
+    BoxLayout:
+        size_hint: 0.2, 0.2
+        Button:
+            text: "A"
+        Button:
+            text: "B"
+
+
+<BoxLayoutExample>:
+    orientation: "horizontal"
+    spacing: "2dp"
+    Button:
+        text: "A"
+        size_hint: 0.5, 0.5
+        pos_hint: {"center_y": 0.5}
+
+    BoxLayout:
+        orientation: "vertical"
+        spacing: "2dp"
+        Button:
+            text: "B1"
+        Button:
+            text: "B2"
+        Button:
+            text: "B3"
+        Button:
+            text: "B4"
+    Label:
+        text: "C"
+
+<MainWidget>:
+    Button:
+        text: "Hello"
+        size: "240dp", "80dp"
+        pos: "0dp", "0dp"
+    Label:
+        text: "Bye"
+        size: "240dp", "80dp"
+        pos: "0dp", "80dp"
+        color: "#B368DE"
