@@ -1,4 +1,11 @@
-ScrollViewExample:
+BoxLayoutExample:
+
+<PageLayoutExample@PageLayout>:
+    MainWidget:
+    BoxLayoutExample:
+    AnchorLayoutExample:
+    GridLayoutExample:
+    ScrollViewExample:
 
 <ScrollViewExample@ScrollView>:
     StackLayoutExample:
@@ -46,24 +53,31 @@ ScrollViewExample:
 <BoxLayoutExample>:
     orientation: "horizontal"
     spacing: "2dp"
-    Button:
-        text: "A"
-        size_hint: 0.5, 0.5
-        pos_hint: {"center_y": 0.5}
+
+    BoxLayout:
+        orientation: "vertical"
+        size_hint: 0.5, 1
+        Button:
+            text: "A"
+            size_hint: 1, 0.5
+            pos_hint: {"center_y": 0.5}
+        Button:
+            text: "B"
+            size_hint: 1, 0.5
+            pos_hint: {"center_y": 0.5}
 
     BoxLayout:
         orientation: "vertical"
         spacing: "2dp"
         Button:
-            text: "B1"
+            text: "C1"
         Button:
-            text: "B2"
+            text: "C2"
         Button:
-            text: "B3"
+            text: "C3"
         Button:
-            text: "B4"
-    Label:
-        text: "C"
+            text: "C4"
+    ScrollViewExample:
 
 <MainWidget>:
     Button:
