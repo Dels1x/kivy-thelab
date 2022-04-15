@@ -4,34 +4,49 @@ WidgetsExample:
     cols: 3
 
     BoxLayout:
-        orientation: "vertical"
-        size_hint: None, 1
-        width: "120dp"
-        ToggleButton:
-            text: "*5: OFF"
-            on_state: root.on_toggle_5_state(self)
-            size_hint: None, 1
-            width: "120dp"
-        ToggleButton:
-            text: "Lock: OFF"
-            on_state: root.on_toggle_enable_state(self)
-            size_hint: None, 1
-            width: "120dp"
-        Switch:
-            id: my_switch
-            size_hint: None, 1
-            width: "120dp"
-            active: True
-        Slider:
-            id: my_slider
-            disabled: not my_switch.active
+        BoxLayout:
             orientation: "vertical"
-            min: 0
-            max: 100
-            value: 50
+            size_hint: None, 1
+            width: "120dp"
+            ToggleButton:
+                text: "*5: OFF"
+                on_state: root.on_toggle_5_state(self)
+                size_hint: None, 1
+                width: "120dp"
+            ToggleButton:
+                text: "Lock: OFF"
+                on_state: root.on_toggle_enable_state(self)
+                size_hint: None, 1
+                width: "120dp"
+            Switch:
+                id: my_switch
+                size_hint: None, 1
+                width: "120dp"
+                active: True
+            Slider:
+                id: my_slider
+                disabled: not my_switch.active
+                orientation: "vertical"
+                min: 0
+                max: 100
+                value: 50
+        BoxLayout:
+            orientation: "vertical"
+            size_hint: None, 1
+            width: "180dp"
+            TextInput:
+                id: my_text_input
+                size_hint: None, 1
+                width: "180dp"
+                text: root.text_input
+                multiline: False
+                on_text_validate: root.on_text_input_validate(self)
+            Label:
+                text: "Name: " + root.text_input
 
     BoxLayout:
         orientation: "vertical"
+        size_hint: 0.5, 1
         Button:
             text: "+"
             on_press: root.on_plus_button_click()
