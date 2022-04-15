@@ -17,6 +17,16 @@ WidgetsExample:
             on_state: root.on_toggle_enable_state(self)
             size_hint: None, 1
             width: "120dp"
+        Switch:
+
+            size_hint: None, 1
+            width: "120dp"
+        Slider:
+            id: my_slider
+            orientation: "vertical"
+            min: 0
+            max: 100
+            value: 50
 
     BoxLayout:
         orientation: "vertical"
@@ -29,11 +39,19 @@ WidgetsExample:
             on_press: root.on_minus_button_click()
             disabled: not root.count_enabled
 
-    Label:
-        text: root.text
-        font_name: "fonts/Lcd.ttf"
-        font_size: "128dp"
-        color: "#7294FF"
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: root.text
+            font_name: "fonts/Lcd.ttf"
+            font_size: "128dp"
+            color: "#7294FF"
+        Label:
+            text: str(int(my_slider.value))
+            font_name: "fonts/Lcd.ttf"
+            font_size: "128dp"
+            color: "#7294FF"
+
 
 <PageLayoutExample@PageLayout>:
     MainWidget:

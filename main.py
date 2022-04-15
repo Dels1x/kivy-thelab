@@ -14,6 +14,7 @@ class WidgetsExample(GridLayout):
     count_enabled = BooleanProperty(True)
     add = 1
     text = StringProperty("0")
+    slider_text = StringProperty("50")
 
     def on_toggle_5_state(self, widget):
         if widget.state == "down":
@@ -40,6 +41,9 @@ class WidgetsExample(GridLayout):
         if self.count_enabled:
             self.count -= self.add
             self.text = str(self.count)
+
+    def on_switch_active(self, widget):
+        print("Switch: " + str(widget.active))
 
 
 class StackLayoutExample(StackLayout):
