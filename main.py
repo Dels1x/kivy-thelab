@@ -42,9 +42,6 @@ class WidgetsExample(GridLayout):
             self.count -= self.add
             self.text = str(self.count)
 
-    def on_switch_active(self, widget):
-        print("Switch: " + str(widget.active))
-
 
 class StackLayoutExample(StackLayout):
     def __init__(self, **kwargs):

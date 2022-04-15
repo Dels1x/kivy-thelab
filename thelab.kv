@@ -18,11 +18,13 @@ WidgetsExample:
             size_hint: None, 1
             width: "120dp"
         Switch:
-
+            id: my_switch
             size_hint: None, 1
             width: "120dp"
+            active: True
         Slider:
             id: my_slider
+            disabled: not my_switch.active
             orientation: "vertical"
             min: 0
             max: 100
