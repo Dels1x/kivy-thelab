@@ -1,4 +1,5 @@
 from kivy.app import App
+from kivy.graphics import Canvas
 from kivy.metrics import dp
 from kivy.properties import StringProperty, BooleanProperty
 from kivy.uix.anchorlayout import AnchorLayout
@@ -10,11 +11,20 @@ from kivy.uix.stacklayout import StackLayout
 from kivy.uix.widget import Widget
 
 
+
+class CanvasExample1(Widget):
+    pass
+
+
 class MainWindow(Screen):
     pass
 
 
 class SecondWindow(Screen):
+    pass
+
+
+class ThirdWindow(Screen):
     pass
 
 

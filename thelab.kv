@@ -1,6 +1,17 @@
-WindowManager:
-    MainWindow:
-    SecondWindow:
+CanvasExample1:
+
+
+#:set s dp(150)
+
+<CanvasExample1>:
+    canvas:
+        Rectangle:
+            pos: self.center[0]-s/2, self.center[1]-s/2
+            size: s, s
+        Ellipse:
+            pos: self.center[0]-100-s/2, self.center[1]+100-s/2
+            size: s, s
+
 
 
 <MainWindow>:
@@ -14,6 +25,7 @@ WindowManager:
             TextInput:
                 id: password
                 multiline: False
+                text: "delsix"
 
         Button:
             text: "Submit"
@@ -31,6 +43,18 @@ WindowManager:
             app.root.current = "main"
             root.manager.transition.direction = "right"
 
+    Button:
+        text: "Fun thingy"
+        on_release:
+            app.root.current = "not not main"
+            root.manager.transition.direction = "right"
+
+
+<ThirdWindow>:
+    name: "not not main"
+
+    WidgetsExample:
+
 
 <ImagesExample@GridLayout>:
     cols: 3
@@ -44,7 +68,7 @@ WindowManager:
         allow_stretch: True
         keep_ratio: False
 
-<WidgetsExample@GridLayout>:
+<WidgetsExample>:
     cols: 3
 
     BoxLayout:
@@ -85,8 +109,14 @@ WindowManager:
                 text: root.text_input
                 multiline: False
                 on_text_validate: root.on_text_input_validate(self)
-            Label:
-                text: "Name: " + root.text_input
+            BoxLayout:
+                Label:
+                    text: "Name: " + root.text_input
+                Button:
+                    text: "Go back"
+                    on_release:
+                        app.root.current = "not main"
+                        root.manager.transition.direction = "left"
 
     BoxLayout:
         orientation: "vertical"
