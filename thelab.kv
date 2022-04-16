@@ -6,12 +6,19 @@ CanvasExample1:
 <CanvasExample1>:
     canvas:
         Rectangle:
-            pos: self.center[0]-s/2, self.center[1]-s/2
+            pos: self.center[0]+100-s/2, self.center[1]+100-s/2
             size: s, s
         Ellipse:
-            pos: self.center[0]-100-s/2, self.center[1]+100-s/2
+            pos: self.center[0]-s/2, self.center[1]+200-s/2
             size: s, s
-
+        Line:
+            points: (0, 0, self.center[0]*2, self.center[1]*2)
+        Line:
+            points: (self.center[1], self.center[0], 0, 0)
+        Line:
+            points: (self.center[1], self.center[0], self.center[0]*2, self.center[1]*2)
+        Line:
+            points: (self.center[0], self.center[1], self.center[1]*2, self.center[0]*2)
 
 
 <MainWindow>:
