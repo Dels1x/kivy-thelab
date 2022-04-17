@@ -19,6 +19,10 @@ class CanvasExample2(Widget):
     pass
 
 
+class CanvasExample3(Widget):
+    pass
+
+
 class MainWindow(Screen):
     pass
 

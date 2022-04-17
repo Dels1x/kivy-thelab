@@ -1,4 +1,4 @@
-CanvasExample2:
+CanvasExample3:
 
 
 #:set s dp(150)
@@ -33,6 +33,19 @@ CanvasExample2:
             points: (0, self.height/2, self.width, self.height/2)
             width: 3
 
+<CanvasExample3>:
+    canvas:
+        Color:
+            rgba: 0.5, 0.5, 1, 1
+        Line:
+            circle: (200, 200, 200)
+            width: 2
+        Line:
+            ellipse: (root.width/2, root.height/2, 190, 300)
+            width: 2
+        Line:
+            rectangle: (100, 100, 200, 200)
+            width: 1.5
 
 <MainWindow>:
     name: "main"
