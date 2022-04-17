@@ -1,5 +1,5 @@
 from kivy.app import App
-from kivy.graphics import Canvas
+from kivy.graphics import Canvas, Line, Color, Rectangle
 from kivy.metrics import dp
 from kivy.properties import StringProperty, BooleanProperty
 from kivy.uix.anchorlayout import AnchorLayout
@@ -21,6 +21,22 @@ class CanvasExample2(Widget):
 
 class CanvasExample3(Widget):
     pass
+
+
+class CanvasExample4(Widget):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        with self.canvas:
+            Color(1, 0, 1)
+            Line(points=(400, 0, 100, 100, 400, 200), width=2)
+            Color(1, 1, 0)
+            Line(circle=(400, 200, 100), width=4)
+            Color(1, 0, 1)
+            Line(points=(400, 200, 100, 300, 400, 400), width=2)
+            Line(rectangle=(200, 100, 400, 206))
+            Color(0.6, 0.2, 1)
+            Rectangle(pos=(300, 200), size=(50, 90))
+
 
 
 class MainWindow(Screen):
