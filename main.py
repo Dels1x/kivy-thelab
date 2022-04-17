@@ -11,8 +11,11 @@ from kivy.uix.stacklayout import StackLayout
 from kivy.uix.widget import Widget
 
 
-
 class CanvasExample1(Widget):
+    pass
+
+
+class CanvasExample2(Widget):
     pass
 
 
