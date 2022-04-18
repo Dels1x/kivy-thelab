@@ -35,8 +35,19 @@ class CanvasExample4(Widget):
             Line(points=(400, 200, 100, 300, 400, 400), width=2)
             Line(rectangle=(200, 100, 400, 206))
             Color(0.6, 0.2, 1)
-            Rectangle(pos=(300, 200), size=(50, 90))
+            self.rect = Rectangle(pos=(300, 200), size=(50, 90))
 
+    def on_button_click(self):
+        inc = 16
+        diff = self.width - (self.rect.size[0] + self.rect.pos[0])
+
+        if diff < inc:
+            inc = diff
+
+        if self.rect.pos[0] < self.width - self.rect.size[0]:
+            self.rect.pos = (self.rect.pos[0] + inc, self.rect.pos[1])
+        else:
+            self.rect.pos = (self.width - self.rect.size[0], self.rect.pos[1])
 
 
 class MainWindow(Screen):
