@@ -1,7 +1,7 @@
 from kivy.app import App
-from kivy.graphics import Canvas, Line, Color, Rectangle
+from kivy.graphics import Line, Color, Rectangle, Ellipse
 from kivy.metrics import dp
-from kivy.properties import StringProperty, BooleanProperty
+from kivy.properties import StringProperty, BooleanProperty, Clock
 from kivy.uix.anchorlayout import AnchorLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.button import Button
@@ -48,6 +48,23 @@ class CanvasExample4(Widget):
             self.rect.pos = (self.rect.pos[0] + inc, self.rect.pos[1])
         else:
             self.rect.pos = (self.width - self.rect.size[0], self.rect.pos[1])
+
+
+class CanvasExample5(Widget):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.ball_size = (dp(50), dp(62))
+        with self.canvas:
+            self.egg = Ellipse(pos=self.center, size=self.ball_size)
+
+        Clock.schedule_interval(self.update, 1 / 66)
+
+    def on_size(self, *args):
+        print(f"Window size: {self.width}x{self.height}")
+        self.egg.pos = (self.center[0] - self.ball_size[0] / 2, self.center[1] - self.ball_size[1] / 2)
+
+    def update(self, dt):
+        self.egg.pos = (self.egg.pos[0] + 1, self.egg.pos[1])
 
 
 class MainWindow(Screen):
