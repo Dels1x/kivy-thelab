@@ -151,4 +151,6 @@ class MainWidget(Widget):
 class TheLabApp(App):
     pass
 
+# ya durik
+
 TheLabApp().run()
