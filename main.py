@@ -15,7 +15,7 @@ from kivy.uix.widget import Widget
 class WidgetsExample(GridLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        Clock.schedule_interval(self.tilt, 1 / 3)
+        Clock.schedule_interval(self.tilt, 1 / 5)
 
     SoundLoader.load("Shadowraze.mp3").play()
 
